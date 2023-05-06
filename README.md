@@ -1,0 +1,2 @@
+# nuxt-course
+nuxt-course
