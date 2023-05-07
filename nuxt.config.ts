@@ -9,4 +9,7 @@ export default defineNuxtConfig({
             publicDir: path.join(__dirname, 'docs/')
         }
     },
+     modules: [
+        '@nuxtjs/tailwindcss'
+    ]
 })
