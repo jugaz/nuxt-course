@@ -11,5 +11,13 @@ export default defineNuxtConfig({
     },
      modules: [
         '@nuxtjs/tailwindcss'
-    ]
+    ],
+    router: {
+    // Usar `_` en lugar de `[]` para rutas dinámicas
+        extendRoutes(routes, resolve) {
+            for (const route of routes) {
+                route.path = route.path.replace(/\[(\w+)\]/g, '_$1');
+            }
+        }
+    }
 })
