@@ -6,7 +6,7 @@
           <h1 class="text-black dark:text-white text-4xl sm:text-5xl font-semibold text-center">Query {{ query}}</h1>
           <h1 class="text-black dark:text-white text-4xl sm:text-5xl font-semibold text-center">Hash {{ hash}}</h1>
           <div class="w-full flex items-center justify-center mt-5">
-              <a href="/nuxt-course/" class="btn-demo text-md sm:text-xl py-2 px-4 sm:py-3 sm:px-6 cursor-pointer">Go back home</a>
+             <nuxt-link to="/" class="btn-demo text-md sm:text-xl py-2 px-4 sm:py-3 sm:px-6 cursor-pointer mr-2">Go back home</nuxt-link>
           </div>
       </div>
   </div>
@@ -16,6 +16,16 @@ const route = useRoute()
 const params = route.params.id
 const query = route.query
 const hash = route.hash
+
+// definePageMeta({
+//   validate: async (item) => {
+//     const hasId = Object.keys(item.params).includes('id')
+//     const hasQuery = Object.keys(item.query).length > 0
+//     const hasHash = item.hash !== ''
+
+//     return (hasId && /^\d+$/.test(item.params.id)) || hasQuery || hasHash
+//   }
+// })
 
 </script>
 
