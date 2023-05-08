@@ -6,7 +6,8 @@
             <div class="w-full flex items-center justify-center">
                 <nuxt-link to="contactos" class="btn-demo text-md sm:text-xl py-2 px-4 sm:py-3 sm:px-6 cursor-pointer mr-2">Contactos</nuxt-link>
                 <nuxt-link to="contactos/123" class="btn-demo text-md sm:text-xl py-2 px-4 sm:py-3 sm:px-6 cursor-pointer mr-2">Parametros</nuxt-link>
-                <nuxt-link to="contactos?v=2" class="btn-demo text-md sm:text-xl py-2 px-4 sm:py-3 sm:px-6 cursor-pointer">Query</nuxt-link>
+                <nuxt-link to="contactos?v=123" class="btn-demo text-md sm:text-xl py-2 px-4 sm:py-3 sm:px-6 cursor-pointer mr-2">Query</nuxt-link>
+                <nuxt-link to="contactos#123" class="btn-demo text-md sm:text-xl py-2 px-4 sm:py-3 sm:px-6 cursor-pointer mr-2">Hash</nuxt-link>
             </div>
         </div>
     </div>
