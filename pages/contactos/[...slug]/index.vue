@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="custom"></NuxtLayout>
+  <NuxtLayout name="default" titleDefault="Parametros"/>
   <div class="font-sans antialiased bg-white dark:bg-black text-black dark:text-white grid min-h-screen place-content-center overflow-hidden">
       <div class="fixed left-0 right-0 bg-gradient z-10"></div>
       <div class="max-w-520px text-center z-20">
