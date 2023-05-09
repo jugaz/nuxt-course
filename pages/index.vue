@@ -21,6 +21,7 @@ const router = useRouter();
 const id = ref('')
 
 const enviarParametro = (item) => {
+    console.log('item', item)
     router.push(`/contactos/${item} ${id.value}`)
 }
 
