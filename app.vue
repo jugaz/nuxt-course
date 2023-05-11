@@ -1,10 +1,7 @@
 <template>
-
-  
-
-    <NuxtPage />
-
+  <NuxtPage />
 </template>
+
 <style>
 
 .btn-demo {
@@ -26,3 +23,7 @@
   bottom: -30vh;
 }
 </style>
+
+<script setup>
+
+</script>
