@@ -19,8 +19,8 @@
     validate: async (item) => {
       const hasId = Object.keys(item.params).includes("slug");
       const hasQuery = Object.keys(item.query).length > 0;
-      const hasHash = item.hash !== "";
-      console.log("hasHash", hasHash);
+      const hasHash = item.hash != "";
+
       return (hasId && /^[\d\s]+$/.test(item.params.slug)) || hasQuery || hasHash;
     },
   });

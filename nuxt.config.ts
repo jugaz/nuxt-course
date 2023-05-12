@@ -42,15 +42,15 @@ export default defineNuxtConfig({
     }
   },
 
-  //: Por si no existe la ruta
-  hooks: {
-    'pages:extend' (routes:any) {
-      routes.push({
-          path: '/:pathMatch(.*)*',
-          redirect: '/'
+  //El redict por si no quieres crear un pagina de error
+  // hooks: {
+  //   'pages:extend' (routes:any) {
+  //     routes.push({
+  //         path: '/:pathMatch(.*)*',
+  //         redirect: '/'
 
-        })
-    }
-  }
+  //       })
+  //   }
+  // }
   
 });

@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/jugaz/nuxt-course#readme",
   "dependencies": {
+    "axios": "^1.4.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "flowbite": "^1.6.5",

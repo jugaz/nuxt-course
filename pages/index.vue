@@ -30,6 +30,7 @@
 
   const enviarParametro = (item) => {
     console.log("item", item);
-    router.push(`\contactos/${item} ${id.value}`);
+    console.log("id",id.value)
+    router.push(`contactos/${item} ${id.value}`);
   };
 </script>
