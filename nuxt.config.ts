@@ -12,7 +12,7 @@ export default defineNuxtConfig({
       publicDir: path.join(__dirname, "docs/"),
     },
   },
-  modules: ["@nuxtjs/tailwindcss", ],
+  modules: ["@nuxtjs/tailwindcss", '@pinia/nuxt'],
   eslint: {
     root: true,
     env: {
