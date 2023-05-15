@@ -3,15 +3,16 @@
 const path = require("path");
 
 export default defineNuxtConfig({
-  ssr: true,
+  ssr: false,
   app: {
-    baseURL: "/nuxt-course/"
+    baseURL: "/nuxt-course/",
+    buildAssetsDir: '',
   },
   nitro: {
     output: {
-      publicDir: path.join(__dirname, "docs/"),
+      publicDir: path.join(__dirname, 'docs'),
     },
-  },
+  }, 
   modules: ["@nuxtjs/tailwindcss", '@pinia/nuxt'],
   eslint: {
     root: true,
@@ -40,6 +41,9 @@ export default defineNuxtConfig({
       ],
       'vue/no-multiple-template-root': 'off'
     }
+  },
+  experimental: {
+    payloadExtraction: true
   },
   imports: {
     dirs: ['./store'],
