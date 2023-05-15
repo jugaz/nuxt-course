@@ -26,10 +26,6 @@
 
 </template>
 <script setup>
-import {UseCounter1, UseCounter2} from '../store/index'
-  const Usecounter1 = UseCounter1() 
-  const Usecounter2 = UseCounter2() 
-
   const router = useRouter();
   const id = ref("");
 

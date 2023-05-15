@@ -5,7 +5,7 @@ const path = require("path");
 export default defineNuxtConfig({
   ssr: true,
   app: {
-    baseURL: "/nuxt-course/",
+    baseURL: "/nuxt-course/"
   },
   nitro: {
     output: {
@@ -40,6 +40,12 @@ export default defineNuxtConfig({
       ],
       'vue/no-multiple-template-root': 'off'
     }
+  },
+  imports: {
+    dirs: ['./store'],
+  },
+  pinia: {
+    autoImports: ['defineStore', 'acceptHMRUpdate'],
   },
 
   //El redict por si no quieres crear un pagina de error
