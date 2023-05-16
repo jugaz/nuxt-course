@@ -31,4 +31,4 @@ jobs:
     - name: Deploy 🚀
       uses: jugaz/github-pages-deploy-action@v4
       with:
-        folder: dist
+        folder: docs
