@@ -1,13 +1,21 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 
+// https://nuxt.com/docs/api/configuration/nuxt-config
 const path = require("path");
 
 export default defineNuxtConfig({
-  ssr: true,
-  app: {
-    // baseURL: "/nuxt-course/",
-    // buildAssetsDir: '/_nuxt/',
+
+  // app: {
+  //   baseURL: "/nuxt-course/",
+  //   rootId:'nuxtCourse',
+  //   // buildAssetsDir: '/_nuxt/',
+  // },
+  runtimeConfig: {
+    apiKey: '', // Default to an empty string, automatically set at runtime using process.env.NUXT_API_KEY
+    public: {
+      baseURL: "/nuxt-course/", // Exposed to the frontend as well.
+    }
   },
+  debug: true,
 
 
   nitro: {
@@ -15,6 +23,7 @@ export default defineNuxtConfig({
       publicDir: path.join(__dirname, 'docs/'),
     },
   },
+  
 
   modules: ["@nuxtjs/tailwindcss", '@pinia/nuxt'],
   
