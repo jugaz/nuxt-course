@@ -3,9 +3,9 @@ import path from "path";
 export default defineNuxtConfig({
 
   app: {
+    // baseURL:"",
     rootId:'nuxtCourse',
   },
-
 
   nitro: {
     output: {
