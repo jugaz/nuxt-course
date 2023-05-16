@@ -4,18 +4,9 @@ const path = require("path");
 
 export default defineNuxtConfig({
 
-  // app: {
-  //   baseURL: "/nuxt-course/",
-  //   rootId:'nuxtCourse',
-  //   // buildAssetsDir: '/_nuxt/',
-  // },
-  runtimeConfig: {
-    apiKey: '', // Default to an empty string, automatically set at runtime using process.env.NUXT_API_KEY
-    public: {
-      baseURL: "/nuxt-course/", // Exposed to the frontend as well.
-    }
+  app: {
+    rootId:'nuxtCourse',
   },
-  debug: true,
 
 
   nitro: {
