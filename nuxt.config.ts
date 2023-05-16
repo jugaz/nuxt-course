@@ -1,7 +1,5 @@
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
-const path = require("path");
-
+import path from "path";
 export default defineNuxtConfig({
 
   app: {
