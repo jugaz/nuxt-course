@@ -3,17 +3,24 @@
 const path = require("path");
 
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
   app: {
-    baseURL: "/nuxt-course/",
-    buildAssetsDir: '',
+    // baseURL: "/nuxt-course/",
+    // buildAssetsDir: '/_nuxt/',
   },
+
+
   nitro: {
     output: {
-      publicDir: path.join(__dirname, 'docs'),
+      publicDir: path.join(__dirname, 'docs/'),
     },
-  }, 
+  },
+
   modules: ["@nuxtjs/tailwindcss", '@pinia/nuxt'],
+  
+  imports: {
+    dirs: ['./store'],
+  },
   eslint: {
     root: true,
     env: {
@@ -42,15 +49,9 @@ export default defineNuxtConfig({
       'vue/no-multiple-template-root': 'off'
     }
   },
-  experimental: {
-    payloadExtraction: true
-  },
-  imports: {
-    dirs: ['./store'],
-  },
-  pinia: {
-    autoImports: ['defineStore', 'acceptHMRUpdate'],
-  },
+  // pinia: {
+  //   autoImports: ['defineStore', 'acceptHMRUpdate'],
+  // },
 
   //El redict por si no quieres crear un pagina de error
   // hooks: {

@@ -21,12 +21,7 @@ export const UseCounter1 = defineStore('counter1', {
 export const UseCounter2 = defineStore("counter2", () => {
     const count2 = ref(0)
 
-    const increment2 = () => {
-    console.log({
-      "count2.value":count2.value,
-      "count2.value++":count2.value++
-    })
-    }
+    const increment2 = () => count2.value++
     const decrementar2 = () => count2.value--
     const reiniciar2 = () => count2.value = 0
 
@@ -39,5 +34,6 @@ export const UseCounter2 = defineStore("counter2", () => {
     }
 })
 // if (import.meta.hot) {
+//   console.log("import.meta.hot",import.meta.hot)
 //   import.meta.hot.accept(acceptHMRUpdate(UseCounter1, import.meta.hot))
 // }

@@ -28,9 +28,5 @@
     const counter1 = UseCounter1()
     const counter2 = UseCounter2() 
 
-    console.log({
-        counter1,
-        counter2
-    })
   </script>
   
