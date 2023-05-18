@@ -19,6 +19,7 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['./store'],
   },
+  
   eslint: {
     root: true,
     env: {
@@ -47,19 +48,45 @@ export default defineNuxtConfig({
       'vue/no-multiple-template-root': 'off'
     }
   },
+
   // pinia: {
   //   autoImports: ['defineStore', 'acceptHMRUpdate'],
   // },
 
-  //El redict por si no quieres crear un pagina de error
-  // hooks: {
-  //   'pages:extend' (routes:any) {
-  //     routes.push({
-  //         path: '/:pathMatch(.*)*',
-  //         redirect: '/'
+  hooks: {
+    'pages:extend'(pages) {
+      //El redict por si no quieres crear un pagina de error
+      // pages.push({
+      //   path: '/:pathMatch(.*)*',
+      //   redirect: '/'
+      // })
 
-  //       })
-  //   }
-  // }
+      // Array de objetos con información sobre las rutas y sus nuevos nombres
+      const routesToChange = [
+        { path: '/crud-firebase/agregar', newName: 'agregar' },
+        // Agrega más objetos para cambiar más rutas
+      ];
+
+      // Función para cambiar el nombre de una ruta
+      function changeRouteName(route:any, newName:any) {
+        if (route.name) {
+          route.name = newName;
+        }
+        if (route.children) {
+          for (const childRoute of route.children) {
+            changeRouteName(childRoute, newName);
+          }
+        }
+      }
+
+      // Recorre el array de rutas a cambiar y modifica los nombres correspondientes
+      for (const routeInfo of routesToChange) {
+        const routeToChange = pages.find((page) => page.path === routeInfo.path);
+        if (routeToChange) {
+          changeRouteName(routeToChange, routeInfo.newName);
+        }
+      }
+    },
+  },
   
 });
