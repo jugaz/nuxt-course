@@ -1,10 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import path from "path";
 export default defineNuxtConfig({
-
+  ssr:true,
   app: {
-    // baseURL:"",
-    rootId:'nuxtCourse',
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.ico' }]
+    },
+    rootId:'app',
   },
 
   nitro: {
@@ -12,6 +16,7 @@ export default defineNuxtConfig({
       publicDir: path.join(__dirname, 'docs/'),
     },
   },
+
   
 
   modules: ["@nuxtjs/tailwindcss", '@pinia/nuxt'],
