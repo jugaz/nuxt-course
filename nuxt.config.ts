@@ -1,57 +1,22 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import path from "path";
 export default defineNuxtConfig({
-  ssr:true,
+  ssr: true,
   app: {
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       link: [{ rel: 'icon', type: 'image/png', href: '/favicon.ico' }]
     },
-    rootId:'app',
+    rootId: 'app',
   },
 
-  nitro: {
-    output: {
-      publicDir: path.join(__dirname, 'docs/'),
-    },
-  },
 
-  
 
   modules: ["@nuxtjs/tailwindcss", '@pinia/nuxt'],
-  
+
   imports: {
     dirs: ['./store'],
-  },
-  
-  eslint: {
-    root: true,
-    env: {
-      browser: true,
-      node: true,
-      commonjs: true,
-      es2022: true,
-    },
-    extends: ["prettier", "eslint:recommended", "plugin:vue/vue3-recommended", "plugin:prettier/recommended"],
-    parserOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-    },
-    rules: {
-      'linebreak-style': ['error', 'windows'],
-      'no-console': 'warn',
-      'vue/require-default-prop': 'off',
-      'vue/multi-word-component-names': 'off',
-      'vue/match-component-file-name': [
-        'error',
-        {
-          extensions: ['js', 'vue'],
-          shouldMatchCase: false,
-        },
-      ],
-      'vue/no-multiple-template-root': 'off'
-    }
   },
 
   // pinia: {
@@ -73,7 +38,7 @@ export default defineNuxtConfig({
       ];
 
       // Función para cambiar el nombre de una ruta
-      function changeRouteName(route:any, newName:any) {
+      function changeRouteName(route: any, newName: any) {
         if (route.name) {
           route.name = newName;
         }
@@ -93,5 +58,5 @@ export default defineNuxtConfig({
       }
     },
   },
-  
+
 });
