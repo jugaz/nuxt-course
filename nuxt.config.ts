@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import path from "path";
+import path from 'node:path'
 export default defineNuxtConfig({
+  compatibilityDate: '2024-04-03',
+  devtools: { enabled: true },
+  alias: {
+    pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs"
+  },
+  css: ["@/assets/css/main.css"],
   ssr: true,
   app: {
     head: {
@@ -11,52 +17,47 @@ export default defineNuxtConfig({
     rootId: 'app',
   },
 
-
-
-  modules: ["@nuxtjs/tailwindcss", '@pinia/nuxt'],
+  modules: [
+    '@pinia/nuxt',
+    '@nuxtjs/tailwindcss'
+  ],
 
   imports: {
     dirs: ['./store'],
   },
 
-  // pinia: {
-  //   autoImports: ['defineStore', 'acceptHMRUpdate'],
-  // },
-
   hooks: {
     'pages:extend'(pages) {
-      //El redict por si no quieres crear un pagina de error
-      // pages.push({
-      //   path: '/:pathMatch(.*)*',
-      //   redirect: '/'
-      // })
-
       // Array de objetos con información sobre las rutas y sus nuevos nombres
       const routesToChange = [
         { path: '/crud-firebase/agregar', newName: 'agregar' },
         // Agrega más objetos para cambiar más rutas
       ];
 
-      // Función para cambiar el nombre de una ruta
+      // Función para cambiar el nombre de una ruta (adaptada a Nuxt 3)
       function changeRouteName(route: any, newName: any) {
-        if (route.name) {
-          route.name = newName;
-        }
+        route.name = newName; // Asignación directa del nombre
         if (route.children) {
-          for (const childRoute of route.children) {
+          route.children.forEach((childRoute: any) => { // Recorrido con forEach
             changeRouteName(childRoute, newName);
-          }
+          });
         }
       }
 
       // Recorre el array de rutas a cambiar y modifica los nombres correspondientes
-      for (const routeInfo of routesToChange) {
+      routesToChange.forEach((routeInfo) => {
         const routeToChange = pages.find((page) => page.path === routeInfo.path);
         if (routeToChange) {
           changeRouteName(routeToChange, routeInfo.newName);
         }
-      }
+      });
     },
   },
 
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 });
